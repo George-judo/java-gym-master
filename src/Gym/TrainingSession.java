@@ -17,4 +17,12 @@ public class TrainingSession {
         this.dayOfWeek = dayOfWeek;
         this.timeOfDay = timeOfDay;
     }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public TimeOfDay getTimeOfDay() {
+        return timeOfDay;
+    }
 }
