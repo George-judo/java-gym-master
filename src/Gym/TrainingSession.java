@@ -25,4 +25,8 @@ public class TrainingSession {
     public TimeOfDay getTimeOfDay() {
         return timeOfDay;
     }
+
+    public Coach getCoach() {
+        return coach;
+    }
 }

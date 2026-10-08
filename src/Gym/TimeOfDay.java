@@ -1,6 +1,8 @@
 package Gym;
 
-public class TimeOfDay {
+import java.util.Objects;
+
+public class TimeOfDay implements Comparable<TimeOfDay> {
 
     //часы (от 0 до 23)
     private int hours;
@@ -18,5 +20,25 @@ public class TimeOfDay {
 
     public int getMinutes() {
         return minutes;
+    }
+
+    @Override
+    public int compareTo(TimeOfDay o) {
+        if (this.hours == o.hours){
+            return this.minutes - o.minutes;
+        } else {
+            return this.hours - o.hours;
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof TimeOfDay timeOfDay)) return false;
+        return hours == timeOfDay.hours && minutes == timeOfDay.minutes;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hours, minutes);
     }
 }
