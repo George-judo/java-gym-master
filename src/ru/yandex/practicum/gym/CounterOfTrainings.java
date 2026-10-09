@@ -1,6 +1,6 @@
-package gym;
+package ru.yandex.practicum.gym;
 
-public class CounterOfTrainings implements Comparable<CounterOfTrainings>{
+public class CounterOfTrainings implements Comparable<CounterOfTrainings> {
     private Coach coach;
     private int amountOfTraining;
 
@@ -19,6 +19,6 @@ public class CounterOfTrainings implements Comparable<CounterOfTrainings>{
 
     @Override
     public int compareTo(CounterOfTrainings o) {
-        return o.amountOfTraining - this.amountOfTraining;
+        return Integer.compare(o.amountOfTraining, this.amountOfTraining);
     }
 }
