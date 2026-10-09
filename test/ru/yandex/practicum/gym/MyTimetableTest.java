@@ -1,6 +1,5 @@
-package junit;
+package ru.yandex.practicum.gym;
 
-import gym.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.util.TreeMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TimetableTest {
+public class MyTimetableTest {
 
     @Test
     void testGetTrainingSessionsForDaySingleSession() {
