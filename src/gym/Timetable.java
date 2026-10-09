@@ -10,7 +10,7 @@ public class Timetable {
         DayOfWeek dayOfWeek = trainingSession.getDayOfWeek();
         TimeOfDay timeOfDay = trainingSession.getTimeOfDay();
 
-        if (!timetable.containsKey(dayOfWeek)){
+        if (!timetable.containsKey(dayOfWeek)) {
             timetable.put(dayOfWeek, new TreeMap<>());
         }
 
@@ -25,7 +25,7 @@ public class Timetable {
     }
 
     public TreeMap<TimeOfDay, List<TrainingSession>> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {
-        if (timetable.containsKey(dayOfWeek)){
+        if (timetable.containsKey(dayOfWeek)) {
             return timetable.get(dayOfWeek);
         }
         return new TreeMap<>();
@@ -33,10 +33,10 @@ public class Timetable {
 
     public List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
         TreeMap<TimeOfDay, List<TrainingSession>> day = this.getTrainingSessionsForDay(dayOfWeek);
-        if (day.isEmpty()){
+        if (day.isEmpty()) {
             return new ArrayList<>();
         }
-        if (day.containsKey(timeOfDay)){
+        if (day.containsKey(timeOfDay)) {
             return day.get(timeOfDay);
         }
         return new ArrayList<>();
@@ -47,9 +47,9 @@ public class Timetable {
 
         for (TreeMap<TimeOfDay, List<TrainingSession>> map : timetable.values()) { //C
             // перебором помогла ии
-            for(List<TrainingSession> list : map.values()) {
-                for(TrainingSession trainingSession : list) {
-                    if (!counts.containsKey(trainingSession.getCoach())){
+            for (List<TrainingSession> list : map.values()) {
+                for (TrainingSession trainingSession : list) {
+                    if (!counts.containsKey(trainingSession.getCoach())) {
                         counts.put(trainingSession.getCoach(), 0);
                     }
                     counts.put(trainingSession.getCoach(),
@@ -59,7 +59,7 @@ public class Timetable {
         }
 
         List<CounterOfTrainings> counterOfTrainings = new ArrayList<>();
-        for(Map.Entry<Coach, Integer> map : counts.entrySet()) {
+        for (Map.Entry<Coach, Integer> map : counts.entrySet()) {
             counterOfTrainings.add(new CounterOfTrainings(map.getKey(), map.getValue()));
         }
 
