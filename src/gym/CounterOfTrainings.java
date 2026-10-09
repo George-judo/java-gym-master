@@ -1,6 +1,6 @@
 package gym;
 
-public class CounterOfTrainings implements Comparable<CounterOfTrainings>{
+public class CounterOfTrainings implements Comparable<CounterOfTrainings> {
     private Coach coach;
     private int amountOfTraining;
 
