@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TimetableTest {
@@ -27,7 +28,7 @@ public class TimetableTest {
         assertEquals(1, amountOfTrainingsInMonday);
         assertEquals(0, amountOfTrainingsInTUESDAY);
     }
-    
+
     @Test
     void testGetTrainingSessionsForDayMultipleSessions() {
         Timetable timetable = new Timetable();
