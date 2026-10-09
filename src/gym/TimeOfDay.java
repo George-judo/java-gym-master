@@ -24,7 +24,7 @@ public class TimeOfDay implements Comparable<TimeOfDay> {
 
     @Override
     public int compareTo(TimeOfDay o) {
-        if (this.hours == o.hours){
+        if (this.hours == o.hours) {
             return this.minutes - o.minutes;
         } else {
             return this.hours - o.hours;
