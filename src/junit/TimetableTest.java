@@ -1,11 +1,10 @@
-package Junit;
+package junit;
 
 import gym.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.TreeMap;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,8 +16,8 @@ public class TimetableTest {
 
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
-        TrainingSession singleTrainingSession = new TrainingSession(group, coach, DayOfWeek.MONDAY
-                ,new TimeOfDay(13, 0));
+        TrainingSession singleTrainingSession = new TrainingSession(group, coach, DayOfWeek.MONDAY,
+                new TimeOfDay(13, 0));
 
         timetable.addNewTrainingSession(singleTrainingSession);
         int amountOfTrainingsInMonday = timetable.getTrainingSessionsForDay(DayOfWeek.MONDAY).size();
@@ -28,6 +27,7 @@ public class TimetableTest {
         assertEquals(1, amountOfTrainingsInMonday);
         assertEquals(0, amountOfTrainingsInTUESDAY);
     }
+    
     @Test
     void testGetTrainingSessionsForDayMultipleSessions() {
         Timetable timetable = new Timetable();
@@ -68,8 +68,5 @@ public class TimetableTest {
         // Проверить, что за вторник не вернулось занятий
         int amountOfForTuesday = timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY).size();
         assertEquals(0, amountOfForTuesday);
-
-
-
     }
 }
